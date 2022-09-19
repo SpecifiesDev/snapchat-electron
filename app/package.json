@@ -1,0 +1,22 @@
+{
+  "name": "snapchat-electron-port",
+  "version": "1.0.0",
+  "description": "An electron port of snapchat web, allowing users to access it through a desktop app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpecifiesDev/snapchat-electron.git"
+  },
+  "author": "Austin Gable",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpecifiesDev/snapchat-electron/issues"
+  },
+  "homepage": "https://github.com/SpecifiesDev/snapchat-electron#readme",
+  "devDependencies": {
+    "electron": "^20.1.4"
+  }
+}

@@ -3,7 +3,7 @@ This repository is a desktop port of Snapchat's freshly released web portal, bui
 
 # installation
 
-If you simply wish to install the application, you can go to the [latest](https://github.com/SpecifiesDev/snapchat-electron/releases/tag/beta) releases page. From here, download the latest zip folder. Now, you unzip the folder and drag it to your desktop. From here you can do one of two things. You can execute the application directly from the exe in the folder (snapchat-electron-port). This will open the app easily. Or, you can move the folder to your `C:/` or another hidden directly and create a shortcut from the same exe.
+If you simply wish to install the application, you can go to the [latest](https://github.com/SpecifiesDev/snapchat-electron/releases/tag/beta) releases page. From here, download the latest zip folder. Now, you unzip the folder and drag it to your desktop. From here you can do one of two things. You can execute the application directly from the exe in the folder (snapchat-electron-port). This will open the app easily. Or, you can move the folder to your `C:/` or another hidden directory and create a shortcut from the same exe.
 
 Just a side note, windows security may prevent the exe from running. This is simply because I haven't defined any app certs. If you wish to validate that the code matches what's on this repository you can navigate to `<PATH_TO_PORT>\resources\app` and cross reference the code. You can also validate the exe with a virus tool like virus total. If you still want to be extra safe, you can follow the instructions to run a fresh build.
 

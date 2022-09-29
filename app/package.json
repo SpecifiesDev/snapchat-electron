@@ -1,6 +1,6 @@
 {
   "name": "snapchat-electron-port",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "icon": "build.png",
   "description": "An electron port of snapchat web, allowing users to access it through a desktop app.",
   "main": "index.js",

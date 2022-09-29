@@ -27,6 +27,45 @@ If you don't care about the icon of the app, you can just run this string withou
 
 This should output a folder named `snapchat-electron-port-win32-x64` in the `\app` directory.
 
+# themes
+In version 1.0.5 themes were released. As of that version, creation of themes is arbitrary and requires manual editing of json files. This section is dedicated to guiding you on how to toggle these themes, and edit // add new ones.
+
+One more side note, I develop all of the base themes that I release per package using dark-mode. They may look odd in a light mode themed pc, and may require additional theme editing.
+
+Getting Started
+
+The first thing you're going to want is a text editor. While not required, it does make this process easier. I use [visual studio](https://code.visualstudio.com/).
+
+Now, navigate to the directory where you've saved your latest build.
+
+The path on my pc is
+`C:\snapchat-electron-port-win32-x64`
+
+Now, navigate to
+`\resources\app`
+
+We're first going to start with first enabling and selecting themes. 
+You may find this setting in the `manifest.json` file under the directory you just navigated to.
+
+In this file you'll these values:
+```json
+{
+  "theme_on": false,
+  "theme": "lavenderdreams"
+}
+```
+
+To toggle the theme to on, change the "false" value to "true" and restart your app.
+
+When selecting a theme, you can only select themes that are located in the `\themes` directory.
+At this point you should have two files in here: `lavenderdreams.json, oceanblue.json`
+
+To select a different theme just change the `theme` value to the name of the theme (without the .json)
+
+Inside of these json files is how you edit the colors.
+
+So, let's say I wanted to create a "volcano" theme. I would create a new json file in this directory called `volcano.json` and then go through changing the colors to my liking. Once through, I'd go back to my `manifest.json` file and set the theme variable to "volcano" and restart my snapchat app. 
+
 # updates
 Since I released 1.0.0 I've been working on an emoji system. I've been able to develop a method that replaces a string using configured emojis. But, with how snapchat defines the text box, I'm unable to change the cursor position without changing the core code of Snapchat's page (which I don't want to do.) Due to this, the emoji update wouldn't be streamline like I want. If people still want it, I'll post it under a separate branch.
 

@@ -1,8 +1,10 @@
 // import our necessary libs
 const { app, BrowserWindow, screen, Notification } = require('electron');
-const path = require('path');
+const { join } = require('path');
 
 let window;
+
+
 
 // keep a placeholder for notif already sent
 let notif_sent = false;
@@ -25,7 +27,7 @@ const checkWindow = () => {
     let options = {
         title: 'Snapchat Message',
         body: `You've received a notification from Snapchat.`,
-        icon: path.join(`${__dirname}/icons/icon.png`)
+        icon: join(`${__dirname}/icons/icon.png`)
     }
 
     if(hasNumber(title)) {
@@ -56,16 +58,22 @@ const createWindow = () => {
         x: screen.width / 2,
         y: screen.height / 2,
         width: 1400,
-        height: 800
+        height: 800,
+        webPreferences: {
+            preload: join(__dirname, "/scripts/preload.js"),
+            nodeIntegration: true
+        }
     });
 
     // set the windows icon
-    win.setIcon(path.join(`${__dirname}/icons/icon.png`));
+    win.setIcon(join(`${__dirname}/icons/icon.png`));
+
 
     win.loadURL('https://web.snapchat.com/', {
         userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' 
         // here we set the user agent to "appear" as a browser
     });
+
 
     // remove the menu bar, it's ugly
     win.setMenu(null);
@@ -82,5 +90,4 @@ app.whenReady().then(() => {
     setInterval(() => {
         checkWindow()
     }, 1000);
-
 });

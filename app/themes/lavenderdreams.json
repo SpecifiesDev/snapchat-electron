@@ -1,0 +1,29 @@
+{
+    "theme": {
+        "--sigMain": "#7070c4",
+        "--sigSubscreen": "#7070c4",
+        "--sigSurface": "#9191ff",
+        "--sigAboveSurface": "#7c7cd9",
+        "--sigBackgroundSecondary": "#7070c4",
+        "--sigBackgroundPrimary": "#7070c4",
+        "--sigBackgroundSecondaryHover": "#9191ff",
+        "--sigBackgroundFeedHover": "#7070c4",
+        "--sigBackgroundMessageHover": "#7070c4",
+        "--sigBackgroundMessageSaved": "#7070c4",
+        "--sigBackgroundMessageSavedHover": "#7c7cd9",
+        "--sigButtonPrimary": "#9191ff",
+        "--sigButtonPrimaryHover": "#7c7cd9",
+        "--sigButtonSecondary": "#9191ff",
+        "--sigButtonSecondaryHover": "#7c7cd9",
+        "--sigColorBackgroundBorder": "#9191ff",
+        "--sigIconPrimary": "#9191ff",
+        "--sigIconSecondary": "#9191ff",
+        "--sigIconTertiary": "#9191ff",
+        "--sigIconNegative": "#9191ff",
+        "--sigTextPrimary": "#171617",
+        "--sigTextSecondary": "#171617",
+        "--sigTextTertiary": "#171617",
+        "--sigChat": "#171617",
+        "--sigSnapWithSound": "#171617"        
+    }
+}

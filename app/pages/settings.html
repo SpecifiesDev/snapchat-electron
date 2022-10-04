@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel = "stylesheet" href="./sheets/base.css">
+      <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+      <script src = "./scripts/error.js"></script>
+      <script src = "./scripts/settings.js"></script>
+   </head>
+   <nav class="navbar navbar-expand-lg static-top mb-5 shadow main-edit">
+      <div class="container main-edit">
+         <a class="navbar-brand link-colors" href="#">Settings</a>
+      </div>
+   </nav>
+   <div style = "padding-top: 5px; padding-left: 100px; padding-right: 100px;">
+      <div class="alert alert-danger alert-dismissible fade show" id = "alertDiv" role="alert">
+         <strong id = "alertStrong">Oops!</strong> <span id = "alertSpan"> %err_alert_main_login% </span>
+      </div>
+   </div>
+   <script>
+      $("#alertDiv").hide();
+   </script>
+   <!-- Page Content -->
+   <div class="container main-edit">
+   <div class="card border-0 shadow my-5 main-edit">
+      <div class="card-body p-5">
+         <h3 class="font-weight-light">
+            You may edit the settings of your app here.
+         </h3>
+         <h6 class = "font-weight-light">
+            When you are done, click the save button to save your settings.
+         </h6>
+         <h6 class = "font-weight-light">
+            You may exit the page at anytime by pressing the hotkey again.
+         </h6>
+      </div>
+      <div class="container settings-box">
+         <div class="row gutters">
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+               <div class="card h-100">
+                  <div class="card-body">
+                     <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                           <h6 class="font-weight-dark">Snapchat Settings</h6>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                           <div class="form-group group-box">
+                              <div>
+                                 <label for="notifications">Notifications</label>
+                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle if the application sends notifications to your computer."></span></a>
+                              </div>
+                              <div class="bootstrap-switch-square">
+                                 <input type="checkbox" data-toggle="switch" class = "notifications"/>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                           <div class="form-group group-box">
+                              <div>
+                                 <label for="Notification Sound">Notification Sound</label>
+                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle if the application sends notification sound to your computer."></span></a>
+                              </div>
+                              <div class="bootstrap-switch-square">
+                                 <input type="checkbox" data-toggle="switch" class = "notifsound"/>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                           <div class="form-group group-box">
+                              <div>
+                                 <label for="Themes">Themes</label>
+                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle themes on / off. You must have a selected theme to toggle this."></span></a>
+                              </div>
+                              <div class="bootstrap-switch-square">
+                                 <input type="checkbox" data-toggle="switch" class = "themes"/>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                           <div class="form-group group-box">
+                              <div>
+                                 <label for="Emoji Hotkey">Emoji Hotkey</label>
+                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle emoji replacement. Use the hotkey ctrl + shift + e to replace all emoji strings you've typed at the end of a message."></span></a>
+                              </div>
+                              <div class="bootstrap-switch-square">
+                                 <input type="checkbox" data-toggle="switch" class = "emoji"/>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                           <div class="text-right">
+                              <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+                              <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <footer id="sticky-footer" class="navbar fixed-bottom py-4 bg-dark text-white-50">
+      <div class = "navbar-socials">
+         <a href = "https://github.com/SpecifiesDev" target = "_blank"><img class = "social" src = "https://specifiesdev.github.io/classes/american/gatsby/assets/images/github.jpg" width = "25" height = "25"></img></a>
+      </div>
+   </footer>
+   <script>
+      // grab all of the tooltips on the page that need to be toggled
+      const tooltipList = document.querySelectorAll(`[data-bs-toggle="tooltip"]`);
+      
+      const final = [...tooltipList].map(element => new bootstrap.Tooltip(element));
+      
+   </script>
+   </body>
+</html>

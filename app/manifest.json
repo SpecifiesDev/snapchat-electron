@@ -1,4 +1,7 @@
 {
-    "theme_on": false,
-    "theme": "lavenderdreams"
+  "notifications": false,
+  "notification_sound": true,
+  "emoji_hotkey": false,
+  "theme_on": true,
+  "theme": "lavenderdreams"
 }

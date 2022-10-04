@@ -1,9 +1,19 @@
 // import our necessary libs
-const { app, BrowserWindow, screen, Notification } = require('electron');
+const { app, BrowserWindow, screen, Notification, globalShortcut } = require('electron');
 const { join } = require('path');
+const { readFileSync } = require('fs');
 
+// import our local data server
+const server = require('./scripts/localserver');
+
+// import our manifest
+const manifest = JSON.parse(readFileSync(join(__dirname, 'manifest.json')));
+
+// store an object of our window
 let window;
 
+// keep track of windows the user is in
+let notif_window = false;
 
 
 // keep a placeholder for notif already sent
@@ -21,6 +31,9 @@ const hasNumber = (str) => {
 // basically, in function it will allow us to send push notifications over the user's
 // system
 const checkWindow = () => {
+
+    if(window == null) return;
+
     let title = window.getTitle();
 
     // create our notification info
@@ -52,6 +65,7 @@ const checkWindow = () => {
     }
 }
 
+
 // function to create the new window with our needed parameters
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -78,6 +92,22 @@ const createWindow = () => {
     // remove the menu bar, it's ugly
     win.setMenu(null);
 
+    // create our hotkeys
+    globalShortcut.register("CommandOrControl+Shift+C", () => {
+        if(!(window.isFocused())) return;
+        if(!notif_window) {
+            // this hotkey is used to open up settings
+            win.loadFile(join(__dirname, '/pages/settings.html'));
+            notif_window = true;
+        } else {
+            win.loadURL('https://web.snapchat.com/', {
+                userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36' 
+                // here we set the user agent to "appear" as a browser
+            });
+            notif_window = false;
+        }
+    })
+
     return win;
 }
 
@@ -87,7 +117,20 @@ app.whenReady().then(() => {
     window = createWindow();
 
     // set the checkWindow interval
-    setInterval(() => {
-        checkWindow()
-    }, 1000);
+    if(manifest.notifications) {
+        setInterval(() => {
+            checkWindow()
+        }, 1000);
+    }
+
+    server.execute();
+
+    window.webContents.openDevTools();
+});
+
+// on app quit sent, deconstruct
+app.on('window-all-closed', () => {
+    if(process.platform !== 'darwin') {
+        app.quit();
+    }
 });

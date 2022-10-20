@@ -14,7 +14,6 @@ let window;
 
 // keep track of windows the user is in
 let notif_window = false;
-let theme_window = false;
 
 
 // keep a placeholder for notif already sent

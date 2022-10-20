@@ -1,35 +1,30 @@
 const errorHandler = (error) => {
 
     // hold the base span id
-    let span = "#alertSpan";
+    let alert = ".alert-error";
     // hold the base div id
-    let div = "#alertDiv";
+    let alertText = ".alert-value";
 
     // set the inner error to whatever the issue is
-    $(span).text(error);
+    $(alertText).text(`ERROR! ${error}`);
 
-    $(div).show();
+    $(alert).show();
         
 
-    setInterval(() => {
-        $(div).hide();
-    }, 4000);
+
 
 }
 
 const successHandler = (message) => {
 
-    let span = "#successSpan";
+    let alert = ".alert-success";
+    let alertText = ".alert-value";
 
-    let div = "#successDiv";
+    $(alertText).text(`Success! ${message}`);
 
-    $(span).text(message);
 
-    $(div).show();
+    $(alert).show();
 
-    setInterval(() => {
-        $(div).hide();
-    }, 4000);
 
 }
 

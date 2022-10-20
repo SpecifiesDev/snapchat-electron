@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const setVariables = vars => Object.entries(vars).forEach(v => root.style.setProperty(v[0], v[1]))
 
     if(manifest.theme_on === 'true') {
-        let theme = JSON.parse(readFileSync(join(`${__dirname.split('scripts')[0]}/themes/${manifest.theme}.json`)));
+        let theme = JSON.parse(readFileSync(join(`${__dirname.split('scripts')[0]}/themes/theme.json`)));
 
         setVariables(theme.theme);
     }

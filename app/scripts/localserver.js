@@ -39,8 +39,6 @@ app.get(`${base}settings`, (req, res) => {
 
     let resp = {
         notifs: settings.notifications,
-        notif_sounds: settings.notification_sound,
-        emoji: settings.emoji_hotkey,
         theme: settings.theme_on
     };
 
@@ -65,8 +63,6 @@ app.post(`${base}settings/update`, (req, res) => {
 
     let request = {
         notifs: req.body.notifs,
-        notif_sounds: req.body.notif_sounds,
-        emoji: req.body.emoji,
         theme: req.body.theme
     }
 

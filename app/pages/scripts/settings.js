@@ -17,24 +17,22 @@ window.addEventListener('DOMContentLoaded', () => {
             // no need to validate here, as the parent request will validate it
             
             // set the boxes on the page to their value
-            $(".notifsound").prop('checked', res.notif_sounds === 'true');
-            $(".notifications").prop('checked', res.notifs === 'true');
-            $(".themes").prop('checked', res.theme === 'true');
-            $(".emoji").prop('checked', res.emoji === 'true');
+            $("#notifications").prop('checked', res.notifs === 'true');
+            $("#theme").prop('checked', res.theme === 'true')
 
         }
     })
 
     $("#submit").click(() => {
+
+        console.log($("#theme").prop('checked'));
         
-        // define a package object to update settings
+
         let package = {};
 
         // package the settings
-        package.notifs = $(".notifications").prop("checked");
-        package.notif_sounds = $(".notifsound").prop("checked");
-        package.emoji = $(".emoji").prop("checked");
-        package.theme = $(".themes").prop("checked");
+        package.notifs = $("#notifications").prop("checked");
+        package.theme = $("#theme").prop("checked");
 
         $.ajax({
             url: "http://localhost:8000/snapchat/data/settings/update",

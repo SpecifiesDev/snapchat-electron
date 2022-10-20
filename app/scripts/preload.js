@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // function to set the root's style properties
     const setVariables = vars => Object.entries(vars).forEach(v => root.style.setProperty(v[0], v[1]))
 
-    if(manifest.theme_on) {
+    if(manifest.theme_on === 'true') {
         let theme = JSON.parse(readFileSync(join(`${__dirname.split('scripts')[0]}/themes/${manifest.theme}.json`)));
 
         setVariables(theme.theme);

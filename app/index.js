@@ -14,6 +14,7 @@ let window;
 
 // keep track of windows the user is in
 let notif_window = false;
+let theme_window = false;
 
 
 // keep a placeholder for notif already sent
@@ -106,7 +107,7 @@ const createWindow = () => {
             });
             notif_window = false;
         }
-    })
+    });
 
     return win;
 }
@@ -117,7 +118,7 @@ app.whenReady().then(() => {
     window = createWindow();
 
     // set the checkWindow interval
-    if(manifest.notifications) {
+    if(manifest.notifications === 'true') {
         setInterval(() => {
             checkWindow()
         }, 1000);

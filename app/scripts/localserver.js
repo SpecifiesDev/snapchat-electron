@@ -93,7 +93,6 @@ app.post(`${base}settings/update`, (req, res) => {
     settings.theme_on = request.theme;
 
     fs.writeFile(path.join(`${__dirname.split('scripts')[0]}manifest.json`), JSON.stringify(settings, null, 2), (err) => {
-        console.log(1);
         if(err) {
             console.log(err);
             return res.json({success: false, message: "There was an error with saving the settings. Refer to dev console."});

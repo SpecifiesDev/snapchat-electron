@@ -1,7 +1,7 @@
 {
-  "notifications": false,
-  "notification_sound": true,
-  "emoji_hotkey": false,
-  "theme_on": true,
+  "notifications": "true",
+  "notification_sound": "true",
+  "emoji_hotkey": "true",
+  "theme_on": "false",
   "theme": "lavenderdreams"
 }

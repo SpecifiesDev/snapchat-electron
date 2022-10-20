@@ -11,11 +11,27 @@ const errorHandler = (error) => {
     $(div).show();
         
 
-    //$(div).animate()
+    setInterval(() => {
+        $(div).hide();
+    }, 4000);
 
 }
 
-const popin = () => {
+const successHandler = (message) => {
+
+    let span = "#successSpan";
+
+    let div = "#successDiv";
+
+    $(span).text(message);
+
+    $(div).show();
+
+    setInterval(() => {
+        $(div).hide();
+    }, 4000);
 
 }
+
+
 

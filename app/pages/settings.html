@@ -1,123 +1,67 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel = "stylesheet" href="./sheets/base.css">
-      <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
-      <script src = "./scripts/error.js"></script>
-      <script src = "./scripts/settings.js"></script>
-   </head>
-   <nav class="navbar navbar-expand-lg static-top mb-5 shadow main-edit">
-      <div class="container main-edit">
-         <a class="navbar-brand link-colors" href="#">Settings</a>
-      </div>
-   </nav>
-   <div style = "padding-top: 5px; padding-left: 100px; padding-right: 100px;">
-      <div class="alert alert-danger alert-dismissible fade show" id = "alertDiv" role="alert">
-         <strong id = "alertStrong">Oops!</strong> <span id = "alertSpan"> %err_alert_main_login% </span>
-      </div>
-   </div>
-   <script>
-      $("#alertDiv").hide();
-   </script>
-   <!-- Page Content -->
-   <div class="container main-edit">
-   <div class="card border-0 shadow my-5 main-edit">
-      <div class="card-body p-5">
-         <h3 class="font-weight-light">
-            You may edit the settings of your app here.
-         </h3>
-         <h6 class = "font-weight-light">
-            When you are done, click the save button to save your settings.
-         </h6>
-         <h6 class = "font-weight-light">
-            You may exit the page at anytime by pressing the hotkey again.
-         </h6>
-      </div>
-      <div class="container settings-box">
-         <div class="row gutters">
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-               <div class="card h-100">
-                  <div class="card-body">
-                     <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                           <h6 class="font-weight-dark">Snapchat Settings</h6>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                           <div class="form-group group-box">
-                              <div>
-                                 <label for="notifications">Notifications</label>
-                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle if the application sends notifications to your computer."></span></a>
-                              </div>
-                              <div class="bootstrap-switch-square">
-                                 <input type="checkbox" data-toggle="switch" class = "notifications"/>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                           <div class="form-group group-box">
-                              <div>
-                                 <label for="Notification Sound">Notification Sound</label>
-                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle if the application sends notification sound to your computer."></span></a>
-                              </div>
-                              <div class="bootstrap-switch-square">
-                                 <input type="checkbox" data-toggle="switch" class = "notifsound"/>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                           <div class="form-group group-box">
-                              <div>
-                                 <label for="Themes">Themes</label>
-                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle themes on / off. You must have a selected theme to toggle this."></span></a>
-                              </div>
-                              <div class="bootstrap-switch-square">
-                                 <input type="checkbox" data-toggle="switch" class = "themes"/>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                           <div class="form-group group-box">
-                              <div>
-                                 <label for="Emoji Hotkey">Emoji Hotkey</label>
-                                 <a><span class="fa fa-info-circle" data-bs-toggle="tooltip" data-bs-placement = "right" data-bs-title = "This setting will toggle emoji replacement. Use the hotkey ctrl + shift + e to replace all emoji strings you've typed at the end of a message."></span></a>
-                              </div>
-                              <div class="bootstrap-switch-square">
-                                 <input type="checkbox" data-toggle="switch" class = "emoji"/>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row gutters">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                           <div class="text-right">
-                              <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                              <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <link rel = "stylesheet" href="./sheets/settings.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <div class="login-card-container">
+        <div class="login-card">
+
+            <div class="login-card-header">
+                <h1>Settings</h1>
+                <div>When done, press Ctrl+Shift+C to return to Snapchat.</div>
             </div>
-         </div>
-      </div>
-   </div>
-   <footer id="sticky-footer" class="navbar fixed-bottom py-4 bg-dark text-white-50">
-      <div class = "navbar-socials">
-         <a href = "https://github.com/SpecifiesDev" target = "_blank"><img class = "social" src = "https://specifiesdev.github.io/classes/american/gatsby/assets/images/github.jpg" width = "25" height = "25"></img></a>
-      </div>
-   </footer>
-   <script>
-      // grab all of the tooltips on the page that need to be toggled
-      const tooltipList = document.querySelectorAll(`[data-bs-toggle="tooltip"]`);
-      
-      const final = [...tooltipList].map(element => new bootstrap.Tooltip(element));
-      
-   </script>
-   </body>
+
+            <div class="login-card-form">
+               
+               <div class="form-item">
+                  <div>Notifications</div>
+                  <label class = "switch">
+                     <input type = "checkbox" id = "notifications">
+                     
+                     <span class = "slider round">
+                  </label>
+               </div>
+
+               <div class="form-item">
+                  <div>Theme</div>
+                  <label class = "switch">
+                     <input type = "checkbox" id = "notifications">
+                     
+                     <span class = "slider round">
+                  </label>
+               </div>
+
+               <div class="form-item">
+                  <div>Emoji Hotkey</div>
+                  <label class = "switch">
+                     <input type = "checkbox" id = "notifications">
+                     
+                     <span class = "slider round">
+                  </label>
+               </div>
+
+                <button type = "submit">Sign In</button>
+            </div>
+
+        </div>
+
+        <div class = "login-card-creator">
+            <div>© SpecifiesDev, 2022</div>
+            <div class="login-card-creator-btn">
+                <a href = "https://github.com/SpecifiesDev" target = "_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
 </html>

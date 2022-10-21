@@ -32,6 +32,30 @@ app.use(cors());
 // define a base url
 let base = "/snapchat/data/";
 
+app.get(`${base}colors`, (req, res) => {
+    let theme = JSON.parse(fs.readFileSync(path.join(`${__dirname.split('scripts')[0]}/themes/theme.json`)));
+
+    let theme_base = theme['theme'];
+
+    let dark = theme_base['--sigMain'];
+    let light = theme_base['--sigSurface'];
+
+    let resp = {
+        dark: dark,
+        light: light
+    };
+
+    let all_valid = true;
+
+    for(const [key, value] of Object.entries(resp)) {
+        if(value == null || (!value && !(value == false))) all_valid = false;
+    }
+
+    resp.success = (all_valid == false) ? false : true;
+
+    res.json(resp);
+});
+
 app.get(`${base}settings`, (req, res) => {
 
     // get our settings json

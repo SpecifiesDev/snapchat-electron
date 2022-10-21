@@ -125,7 +125,6 @@ app.whenReady().then(() => {
 
     server.execute();
 
-    window.webContents.openDevTools();
 });
 
 // on app quit sent, deconstruct

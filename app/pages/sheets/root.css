@@ -1,6 +1,6 @@
 :root {
-    --mainPageBlue: #659999;
-    --mainPageOrange: #ff964b;
+    --mainPageTop: #659999;
+    --mainPageBottom: #ff964b;
     --errorAlertColor: #f44336;
     --successAlertColor: #04aa6d;
 }

@@ -1,5 +1,5 @@
 {
-  "notifications": "true",
-  "theme_on": "true",
+  "notifications": "false",
+  "theme_on": "false",
   "theme": "lavenderdreams"
 }

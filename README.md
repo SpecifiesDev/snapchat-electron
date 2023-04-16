@@ -23,7 +23,11 @@ This will go through all of the required dependencies and also install our packa
 
 If you don't care about the icon of the app, you can just run this string without the icon parameter. If you do, just replace <PATH_TO_ICON> with the path to the icon in `icons\`
 
+If you're on windows you can use this command.
 `electron-packager . snapchat-electron-port --overwrite --platform=win32 --icon=<PATH_TO_ICON>` 
+
+If you're trying to build on linux, this command should work fine.
+electron-packager . snapchat-electron-port --overwrite --platform=**linux** --icon=<PATH_TO_ICON>
 
 This should output a folder named `snapchat-electron-port-win32-x64` in the `\app` directory.
 

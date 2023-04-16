@@ -27,7 +27,7 @@ If you're on windows you can use this command.
 `electron-packager . snapchat-electron-port --overwrite --platform=win32 --icon=<PATH_TO_ICON>` 
 
 If you're trying to build on linux, this command should work fine.
-electron-packager . snapchat-electron-port --overwrite --platform=**linux** --icon=<PATH_TO_ICON>
+`electron-packager . snapchat-electron-port --overwrite --platform=**linux** --icon=<PATH_TO_ICON>`
 
 This should output a folder named `snapchat-electron-port-win32-x64` in the `\app` directory.
 
